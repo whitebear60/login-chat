@@ -9,7 +9,8 @@
   "loginchat.config.singleplayer.desc": "Should the mod send the messages, specified in the messages list, at the start of the singleplayer session?",
 
   "loginchat.config.delay": "Chat Messages Delay",
-  "loginchat.config.delay.desc": "The amount of time in milliseconds that will pass since joining the server or the world before the chat messages you specified in the config will be sent"
+  "loginchat.config.delay.desc": "The amount of time in milliseconds that will pass since joining the server or the world before the chat messages you specified in the config will be sent",
 
-
+  "loginchat.chat.ip": "Server IP for the Login Chat configuration file:",
+  "loginchat.chat.clipboard": "Copy the IP to clipboard"
 }

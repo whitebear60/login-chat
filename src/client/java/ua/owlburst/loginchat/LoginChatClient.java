@@ -6,6 +6,11 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.text.ClickEvent;
+import net.minecraft.text.HoverEvent;
+import net.minecraft.text.Style;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,8 +42,21 @@ public class LoginChatClient implements ClientModInitializer {
 			String ip = handler.getConnection().getAddress().toString();
 			ip = ip.split("/")[0].replaceAll("\\.$", "");
 			if (serversList.contains(ip)) {
-				LOGGER.info(MessageFormat.format("Server Address for Login Chat: {0}", ip));
 				send(client, commandsList);
+			} else {
+				if (client.player != null) {
+					client.player
+							.sendMessage(Text.literal("[Login Chat] ").append(Text.translatable("loginchat.chat.ip")).append(Text.of(" "))
+							.append(Text.literal(ip)
+									.setStyle(Style.EMPTY
+											.withClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, ip))
+											.withFormatting(Formatting.YELLOW)
+											.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.translatable("loginchat.chat.clipboard")))
+									)
+							)
+							);
+				}
+				LOGGER.info("Connecting to the server: {}", ip);
 			}
 		} else {
 			if (LoginChatConfig.HANDLER.instance().isEnabledInSingleplayer) {
