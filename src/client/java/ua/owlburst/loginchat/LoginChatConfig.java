@@ -18,7 +18,7 @@ import java.util.List;
 
 public class LoginChatConfig{
     public static ConfigClassHandler<LoginChatConfig> HANDLER = ConfigClassHandler.createBuilder(LoginChatConfig.class)
-            .id(new Identifier(LoginChatClient.MOD_ID, "config"))
+            .id(Identifier.tryParse(LoginChatClient.MOD_ID, "config"))
             .serializer(config -> GsonConfigSerializerBuilder.create(config)
                     .setPath(YACLPlatform.getConfigDir().resolve(LoginChatClient.MOD_ID + ".json"))
                     .build())
