@@ -3,7 +3,13 @@
   "loginchat.config.serverslist.desc": "List of servers on which the mod is enabled",
 
   "loginchat.config.messageslist": "Messages List",
-  "loginchat.config.messageslist.desc": "List of the messages the mod should send at the start of the session. May contain commands, those should start with a /.",
+  "loginchat.config.messageslist.desc": "List of the messages the mod should send at the start of the session. May contain commands, those should start with a /. This list is ignored if the Messages List Mode is set to PER_SERVER",
+
+  "loginchat.config.messageslist.mode": "Messages List Mode",
+  "loginchat.config.messageslist.mode.desc": "SHARED - the messages sent to all servers in the list will be the same and specified in the Messages List field of this config file\n\nPER_SERVER - the messages sent to every server will be custom and will need to be specified in the text files in the mod config folder",
+
+  "loginchat.config.openfolder": "Open Messages List Folder",
+  "loginchat.config.openfolder.desc": "Opens the folder containing the messages list files for the PER_SERVER messages list mode using your system's file manager",
 
   "loginchat.config.singleplayer": "Enabled in singleplayer?",
   "loginchat.config.singleplayer.desc": "Should the mod send the messages, specified in the messages list, at the start of the singleplayer session?",
@@ -12,5 +18,6 @@
   "loginchat.config.delay.desc": "The amount of time in milliseconds that will pass since joining the server or the world before the chat messages you specified in the config will be sent",
 
   "loginchat.chat.ip": "Server IP for the Login Chat configuration file:",
-  "loginchat.chat.clipboard": "Copy the IP to clipboard"
+  "loginchat.chat.clipboard": "Copy the IP to clipboard",
+  "loginchat.chat.listPerServerEnabled": "The Message List Per Server mode is enabled. Open the ModMenu config menu for more information."
 }
