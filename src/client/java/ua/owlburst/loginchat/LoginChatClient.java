@@ -186,7 +186,7 @@ class SendCommandTask implements Runnable {
 				LoginChatClient.LOGGER.info(MessageFormat.format("Sending the chat message: {0}", this.input));
 				client.player.networkHandler.sendChatMessage(input);
                 try {
-                    sleep(100);
+                    sleep(1000);
                 } catch (InterruptedException ignored) {
                 }
             } else {
