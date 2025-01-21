@@ -62,9 +62,9 @@ public class LoginChatClient implements ClientModInitializer {
 											.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.translatable("loginchat.chat.clipboard")))
 									)
 							)
-							);
+							, false);
 					if (LoginChatConfig.HANDLER.instance().isListPerServer) {
-						client.player.sendMessage(Text.literal("[Login Chat] ").append(Text.translatable("loginchat.chat.listPerServerEnabled")).append(Text.of(" ")));
+						client.player.sendMessage(Text.literal("[Login Chat] ").append(Text.translatable("loginchat.chat.listPerServerEnabled")).append(Text.of(" ")), false);
 					}
 				}
 				LOGGER.info("Connecting to the server: {}", ip);
